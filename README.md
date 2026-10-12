@@ -15,7 +15,7 @@ Screen time among children has climbed sharply since 2020, while park visits hav
 
 ## Methods
 
-1. **Data collection:** scraped Google Maps reviews for 16 parks with at least 100 reviews each, spread across the county to avoid geographic bias.
+1. **Data collection:** scraped Google Maps reviews for 16 parks with at least 100 reviews each, spread across the county to avoid geographic bias, then used SQL to combine them into one dataset (reviewer, date, review, park name, ZIP code).
 2. **Cleaning:** merged reviews that the scraper split across multiple rows, removed emojis and special characters, removed park names, corrected spelling with TextBlob, removed stop words (NLTK plus custom), and mapped synonyms (e.g. "great", "awesome" → "good").
 3. **Sentiment scoring:** TextBlob polarity (−1 to 1), labeled positive (≥ 0.25), neutral, or negative (< 0).
 4. **Feature analysis:** bigram and 4-gram frequency by sentiment class, TF-IDF keywords by ZIP code, and LDA topic modeling (5 topics).
@@ -26,14 +26,14 @@ Screen time among children has climbed sharply since 2020, while park visits hav
 
 | File | What it is |
 |---|---|
-| `charlotte_parks_sentiment.ipynb` | Full analysis notebook (Google Colab) |
-| `Green_Time_Not_Screen_Time.pdf` | Final capstone paper |
+| `finalcode.ipynb` | Full analysis notebook (Google Colab) |
+| `DTSC 4302 Final.pdf` | Final capstone paper |
 
 The raw review data isn't included. It contains reviewers' names, and Google's terms don't allow republishing it.
 
 ## Tools
 
-Python · Pandas · NLTK · TextBlob · Scikit-learn · GeoPandas · Folium · Matplotlib · Seaborn
+Python · SQL · Pandas · NLTK · TextBlob · Scikit-learn · GeoPandas · Folium · Matplotlib · Seaborn
 
 ## Team
 
